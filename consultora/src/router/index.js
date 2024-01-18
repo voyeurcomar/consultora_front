@@ -12,6 +12,9 @@ import routes from './routes'
  */
 
 export default route(function (/* { store, ssrContext } */) {
+  // const auth = getAuth();
+  // const user = auth.currentUser;
+  // console.log(user)
   const createHistory = process.env.SERVER
     ? createMemoryHistory
     : (process.env.VUE_ROUTER_MODE === 'history' ? createWebHistory : createWebHashHistory)
@@ -25,6 +28,13 @@ export default route(function (/* { store, ssrContext } */) {
     // quasar.conf.js -> build -> publicPath
     history: createHistory(process.env.VUE_ROUTER_BASE)
   })
-
+  // Router.beforeEach((to, from, next) => {
+  //     if(user == null && to.path == "/"  ){
+  //       next('/')
+  //     }else{
+  //       next()
+  //     }
+  //   // ...
+  //   });
   return Router
 })

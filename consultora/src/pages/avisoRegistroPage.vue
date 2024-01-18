@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <q-btn label="Salir" @click="salir()"/>
+    Se envio un mail de verificacion a su correo.
   </q-page>
 </template>
 
@@ -21,10 +21,6 @@ export default {
   }
 },
 mounted() {
-  onMessage(this.messaging, (payload) => {
-    console.log('Message received. ', payload);
-  // ...
-  })
   // getToken(this.messaging, { vapidKey: 'BCYJzNuBxYf_mM55bS3LBcZUeQXSBZnwVgkThN9NoKJmHaRPQ5uHDl57mvKCAEdhr7O_PB0IMz9yfCf2AXpfzoU' })
   // .then((currentToken) => {
   //     if (currentToken) {
@@ -41,14 +37,14 @@ mounted() {
   //   });
   },
   methods: {
-    salir(){
-      signOut(auth).then(() => {
-        LocalStorage.clear()
-        this.$router.replace('/')
-      }).catch((error) => {
-        // An error happened.
-      });
-    }
+    // salir(){
+    //   signOut(auth).then(() => {
+    //     LocalStorage.clear()
+    //     this.$router.replace('/')
+    //   }).catch((error) => {
+    //     // An error happened.
+    //   });
+    // }
   },
 
 }
